@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./styles.css";
 
-var color = "blue";
+let color = "blue";
 
-var emojiDictionary = {
+let emojiDictionary = {
   "😊": "smiling",
   "😳": "disbelief",
   "😔": "sad",
@@ -12,15 +12,15 @@ var emojiDictionary = {
   "😑": "annoyance"
 };
 
-var emojisAvailable = Object.keys(emojiDictionary);
+let emojisAvailable = Object.keys(emojiDictionary);
 
 export default function App() {
-  var [meaning, userMeaning] = useState("");
+  let [meaning, userMeaning] = useState("");
 
   function inputHandler() {
-    var userInput = event.target.value;
+    let userInput = event.target.value;
 
-    var meaning = emojiDictionary[userInput];
+    let meaning = emojiDictionary[userInput];
 
     if (meaning === undefined) {
       meaning = "No value found in our database";
@@ -29,7 +29,7 @@ export default function App() {
   }
 
   function emojiClickHandler(emoji) {
-    var meaning = emojiDictionary[emoji];
+    let meaning = emojiDictionary[emoji];
     userMeaning(meaning);
   }
 
